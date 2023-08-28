@@ -1,0 +1,151 @@
+.form {
+  &__body {
+    padding: 50px 0;
+    // width: 100%;
+  }
+
+  &__item {
+    margin: 0 auto;
+    padding: 50px 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% / 2);
+    height: 500px;
+    background: $bgForm;
+    border-radius: 62px;
+    border: 0px;
+    @media (max-width: 1440px) {
+      height: calc(365px + (430 - 365) * ((100vw - 320px) / (1440 - 320)));
+    }
+    @media (max-width: 520px) {
+      padding: 35px 20px;
+      border-radius: 30px;
+    }
+  }
+
+  &__label_checkbox {
+    position: relative;
+    font-size: 18px;
+    color: $black;
+    user-select: none;
+    cursor: pointer;
+    padding-left: 40px;
+    @media (max-width: 1440px) {
+      font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
+
+  &__label_checkbox::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: $input;
+    border-radius: 10px;
+    top: 3px;
+    left: 0;
+  }
+
+  &__checkbox:checked + &__label_checkbox::before {
+    background: url("../img/marker.svg");
+    background-position: center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-color: $input;
+  }
+
+  &__input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 0 10px 15px;
+  }
+
+  &__label_text {
+    width: 100%;
+    border-radius: 33px;
+    border: none;
+    background: $input;
+  }
+
+  &__input::placeholder {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    padding: 0 0 0 15px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  &__label_fileInput {
+    display: block;
+    padding: 10px 25px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    line-height: 17px;
+    text-transform: uppercase;
+    background-color: $orangeOne;
+    color: $white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    @media (max-width: 1440px) {
+      font-size: calc(10px + (14 - 10) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
+
+  &__label_fileInput:hover {
+    background-color: $firstPartg;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__btn {
+    border: transparent;
+    border-radius: 36px;
+    padding: 30px 116px;
+    background: linear-gradient(to right, $orangeOne, $orangeTwo);
+    box-shadow: 3px 25px 40px -23px $orangeOne;
+    color: $white;
+    font-size: 0.6rem;
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    @media (max-width: 1440px) {
+      padding-top: calc(14px + (30 - 14) * ((100vw - 320px) / (1440 - 320)));
+      padding-bottom: calc(14px + (30 - 14) * ((100vw - 320px) / (1440 - 320)));
+      padding-right: calc(47px + (116 - 47) * ((100vw - 320px) / (1440 - 320)));
+      padding-left: calc(47px + (116 - 47) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
+
+  &__btn:hover {
+    box-shadow: none;
+  }
+
+  &__input_question {
+    height: 3rem;
+  }
+}
+
+#question > .form__item {
+  height: 600px;
+  @media (max-width: 1440px) {
+    height: calc(385px + (600 - 385) * ((100vw - 320px) / (1440 - 320)));
+  }
+  @media (max-width: 520px) {
+    padding: 35px 20px;
+    border-radius: 30px;
+  }
+}

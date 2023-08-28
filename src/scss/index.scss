@@ -3,3 +3,11 @@
 @import 'normalize';
 @include normalize();
 @import 'default';
+
+@import 'componets/header';
+@import 'componets/burger';
+@import 'componets/screen';
+@import 'componets/ofer';
+@import 'componets/partners';
+@import 'componets/form';
+@import 'componets/footer';

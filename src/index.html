@@ -1,28 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gulp</title>
+  <title>Xiaomi</title>
   <link rel="stylesheet" href="css/index.min.css">
-  <script src="js/index.min.js"></script>
+  <script src="js/index.min.js" type="module"></script>
 </head>
+
 <body>
-  <header>
-    <img src="img/sprite.svg#logo" alt="logo" class="logo" width="100">
+
+  <header class="header">
+    <div class="burger">
+      <div class="container">
+        <div class="burger__btn">
+          <span></span>
+        </div>
+        <ul class="burger__body">
+          <li class="burger__item"><a class="burger__point" href="#request">Подать заявку</a></li>
+          <li class="burger__item"><a class="burger__point" href="#question">Условия</a></li>
+          <li class="burger__item"><a class="burger__switch" href="kz_index.html">KZ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <nav class="header__body">
+        <ul class="header__list">
+          <li class="header__item"><a class="header__point" href="#request">Подать заявку</a></li>
+          <li class="header__item"><a class="header__point" href="#question">Условия</a></li>
+          <li class="header__item"><a class="header__switch" href="kz_index.html">KZ</a></li>
+        </ul>
+        <div class="header__logo">
+          <a class="header__link" href="https://mi.com.kz/" target="_blank">
+            <img src="./img/logo_mi.svg" alt="Лого Xiaomi">
+          </a>
+        </div>
+      </nav>
+    </div>
   </header>
-  <main>
-    <h1>GULP</h1>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
-    <picture>
-      <source srcset="img/1984-768.avif" type="image/avif" media="(min-width: 768px)">
-      <source srcset="img/1984.avif" type="image/avif">
-      <source srcset="img/1984-768.webp" type="image/webp" media="(min-width: 768px)">
-      <source srcset="img/1984.webp" type="image/webp">
-      <source srcset="img/1984-768.jpg" media="(min-width: 768px)">
-      <img src="img/1984.jpg" alt="">
-    </picture>
+
+  <main class="main">
+    <div class="screen">
+      <div class="container">
+        <div class="screen__body">
+          <ul class="screen__list">
+            <li class="screen__item screen__item_narrow">
+              <img class="screen__logo" src="./img/yandex_logo.svg" alt="Лого yandex плюс">
+              <img class="screen__idea" src="./img/90_days.png" alt="90 плюс">
+              <h2 class="screen__title">дней подписки в подарок</h2>
+            </li>
+            <li class="screen__item screen__item_wide">
+              <img class="screen__img" src="./img/phones.png" alt="Фото телефонов Xiaomi 12 серии">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ofer">
+      <div class="container">
+        <h2 class="title">Как стать участником акции</h2>
+        <ul class="ofer__body">
+          <li class="ofer__item ofer__item_orang">
+            <p class="ofer__step">1</p>
+            <p class="ofer__description">Купи смартфонв период с 01.09.23 - 01.10.23</p>
+          </li>
+          <li class="ofer__item ofer__item_violet">
+            <p class="ofer__step" style="margin-right: 15px;">2</p>
+            <p class="ofer__description">Получи подписку<br>на 90 дней в подарок</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="partners">
+      <div class="container">
+        <h2 class="title">Партнеры по продажам</h2>
+        <ul class="partners__list">
+          <li class="partners__item">
+            <a class="partners__link" href="https://www.sulpak.kz/" target="_blank">
+              <img src="./img/sulpak_logo.svg" alt="Лого магазина Сулпак">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://www.mechta.kz/" target="_blank">
+              <img src="./img/mechta_logo.svg" alt="Лого магазина Мечта">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://www.technodom.kz/" target="_blank">
+              <img src="./img/technoD_logo.svg" alt="Лого магазина Технодом">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://mi.com.kz/" target="_blank">
+              <img src="./img/logo_mi_store.svg" alt="Лого магазина Ксиаоми">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://alser.kz/" target="_blank">
+              <img src="./img/logo_alser.png" alt="Лого магазина Алсер">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://fmobile.kz/" target="_blank">
+              <img src="./img/fm_logo.svg" alt="Лого магазина Фридом Финанс">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://evrika.com/" target="_blank">
+              <img src="./img/logo_evrika.png" alt="Лого магазина Эврика">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://fora.kz/" target="_blank">
+              <img src="./img/logo_fora_grey.png" alt="Лого магазина Фора">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://shop.kz/" target="_blank">
+              <img src="./img/logo_bv.svg" alt="Лого магазина Белый ветер">
+            </a>
+          </li>
+          <li class="partners__item">
+            <a class="partners__link" href="https://www.dns-shop.kz/" target="_blank">
+              <img src="./img/dns_logo.png" alt="Лого магазина ДНС">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="request" class="form">
+      <div class="container">
+        <h2 class="title">Подать заявку на промокод</h2>
+        <form id="form" class="form__body" method="POST">
+          <fieldset class="form__item">
+            <label class="form__label form__label_text" for="email">
+              <input class="form__input" type="text" id="email" name="email" placeholder="Эл.почта">
+            </label>
+
+            <label class="form__label form__label_text" for="imei">
+              <input class="form__input" type="text" id="imei" name="imei" placeholder="IMEI 1:">
+            </label>
+
+            <label class="form__label form__label_fileInput" for="fileInput">Прекрепите скан чека пожалуйста
+              <input class="form__input form__input_fileInput" type="file" id="fileInput" name="fileInput">
+            </label>
+
+            <input class="form__checkbox" type="checkbox" id="checkold" name="checkold">
+            <label class="form__label form__label_checkbox" for="checkold">
+              Я подтверждаю, что мне 18 и более лет и я согласен с правилами акции.
+            </label>
+            <button class="form__btn" type="submit" name="submit">ОТПРАВИТЬ</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="form">
+      <div class="container">
+        <h2 class="title">Обратная связь</h2>
+        <form id="question" class="form__body" method="POST">
+          <fieldset class="form__item">
+            <label class="form__label form__label_text" for="name">
+              <input class="form__input" type="text" id="name" name="name" placeholder="Имя">
+            </label>
+
+            <label class="form__label form__label_text" for="emailquestion">
+              <input class="form__input" type="text" id="emailquestion" name="emailquestion" placeholder="Эл.почта">
+            </label>
+
+            <label class="form__label form__label_text" for="message">
+              <input class="form__input form__input_question" type="text" id="message" name="message"
+                placeholder="Введите текст">
+            </label>
+
+            <input class="form__checkbox" type="checkbox" id="checkoldquestion" name="checkoldquestion">
+            <label class="form__label form__label_checkbox" for="checkoldquestion">
+              Я подтверждаю, что мне 18 и более лет и я согласен с правилами акции.
+            </label>
+            <button class="form__btn" type="submit" name="submit">ОТПРАВИТЬ</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </main>
-</body>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <ul class="footer__body">
+        <li class="footer__item"><img class="footer__logo" src="./img/logo_mi_grey.svg" alt="Лого Xiaomi"></li>
+        <li class="footer__item">
+          <p class="footer_paragraph">Общий срок проведения Акции – с 1 сентября 2023 года по 1 октября 2023 года.
+            Участие могут принимать ТОЛЬКО СОВЕРШЕННОЛЕТНИЕ ЖИТЕЛИ РЕСПУБЛИКИ КАЗАХСТАН, которые находятся в РК. Участие
+            несовершеннолетних в возрасте от четырнадцати до восемнадцати лет допускается только
+            с согласия их законных представителей. Для того, чтобы стать участником Акции и получить гарантированный
+            подарок, необходимо совершить покупку смартфона под товарным знаком «Redmi» в официальных магазинах Xiaomi
+            или у официальных партнеров до 1 октября 2023 года: Sulpak \ Sulpak.kz, Белый Ветер \ Shop.kz, Технодом
+            \technodom.kz, Эврика \ evrika. com, Xiaomi stores \ mi.com.kz, Мечта \mechta.kz, Fora \ fora.kz, Alser \
+            alser.kz, Freedom Mobile \ fmobile.kz, DNS \ dns-shop.kz. В акции учавствуют следующие модели Redmi 12,
+            Redmi Note 12, Redmi Note 12 Pro, Redmi Note 12 Pro+ 5G, Redmi Note 12S. Ознакомиться с полными правилами
+            проведения Акции можно по <a class="footer__link" href="./img/rules.pdf">ССЫЛКЕ.</a></p>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
 </html>

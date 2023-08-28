@@ -1,77 +1,77 @@
-"use strict";
+'use strict';
 
 // gulp
-import gulp from "gulp";
-import gulpif from "gulp-if";
-import browserSync from "browser-sync";
-import rename from "gulp-rename";
-import plumber from "gulp-plumber";
-import { deleteSync } from "del";
+import gulp from 'gulp';
+import gulpif from 'gulp-if';
+import browserSync from 'browser-sync';
+import rename from 'gulp-rename';
+import plumber from 'gulp-plumber';
+import {deleteSync} from 'del';
 
 // html*pug
-import htmlmin from "gulp-htmlmin";
-import gulppug from "gulp-pug";
-import prettyHtml from "gulp-pretty-html";
+import htmlmin from 'gulp-htmlmin';
+import gulppug from 'gulp-pug';
+import prettyHtml from 'gulp-pretty-html';
 
 // css
-import sass from "sass";
-import gulpSass from "gulp-sass";
+import sass from 'sass';
+import gulpSass from 'gulp-sass';
 const compSass = gulpSass(sass);
 
-import sourcemaps from "gulp-sourcemaps";
-import autoprefixer from "gulp-autoprefixer";
-import cleanCSS from "gulp-clean-css";
-import gcmq from "gulp-group-css-media-queries";
-import { stream as critical } from "critical";
+import sourcemaps from 'gulp-sourcemaps';
+import autoprefixer from 'gulp-autoprefixer';
+import cleanCSS from 'gulp-clean-css';
+import gcmq from 'gulp-group-css-media-queries';
+import {stream as critical} from 'critical';
 
 // js
-import terser from "gulp-terser";
-import webpackStream from "webpack-stream";
-import webpack from "webpack";
+import terser from 'gulp-terser';
+import webpackStream from 'webpack-stream';
+import webpack from 'webpack';
 
 //img
-import tinypng from "gulp-tinypng-compress";
-import gulpImg from "gulp-image";
-import gulpWebp from "gulp-webp";
-import gulpAvif from "gulp-avif";
-import svgSprite from "gulp-svg-sprite";
+import tinypng from 'gulp-tinypng-compress';
+import gulpImg from 'gulp-image';
+import gulpWebp from 'gulp-webp';
+import gulpAvif from 'gulp-avif';
+import svgSprite from 'gulp-svg-sprite';
 
 let dev = true;
 
 const path = {
   dist: {
-    base: "dist/",
-    html: "dist/",
-    js: "dist/js/",
-    css: "dist/css/",
-    cssIndex: "dist/css/index.min.css",
-    img: "dist/img/",
-    fonts: "dist/fonts/",
+    base: 'dist/',
+    html: 'dist/',
+    js: 'dist/js/',
+    css: 'dist/css/',
+    cssIndex: 'dist/css/index.min.css',
+    img: 'dist/img/',
+    fonts: 'dist/fonts/',
   },
   src: {
-    base: "src/",
-    html: "src/*.html",
-    pug: "src/pug/*.pug",
-    scss: "src/scss/**/*.scss",
-    js: "src/js/index.js",
-    img: "src/img/**/*.*",
-    svg: "src/svg/**/*.svg",
-    imgF: "src/img/**/*.{jpg,jpeg,png}",
+    base: 'src/',
+    html: 'src/*.html',
+    pug: 'src/pug/*.pug',
+    scss: 'src/scss/**/*.scss',
+    js: 'src/js/index.js',
+    img: 'src/img/**/*.*',
+    svg: 'src/svg/**/*.svg',
+    imgF: 'src/img/**/*.{jpg,jpeg,png}',
     assets: [
-      "src/fonts/**/*.*",
-      "src/icons/**/*.*",
-      "src/video/**/*.*",
-      "src/public/**/*.*",
+      'src/fonts/**/*.*',
+      'src/icons/**/*.*',
+      'src/video/**/*.*',
+      'src/public/**/*.*',
     ],
   },
   watch: {
-    html: "src/*.html",
-    js: "src/**/*.js",
-    pug: "src/**/*.pug",
-    css: "src/**/*.scss",
-    svg: "src/svg/**/*.svg",
-    img: "src/img/**/*.*",
-    imgF: "src/img/**/*.{jpg,jpeg,png}",
+    html: 'src/*.html',
+    js: 'src/**/*.js',
+    pug: 'src/**/*.pug',
+    css: 'src/**/*.scss',
+    svg: 'src/svg/**/*.svg',
+    img: 'src/img/**/*.*',
+    imgF: 'src/img/**/*.{jpg,jpeg,png}',
   },
 };
 
@@ -86,8 +86,8 @@ export const html = () =>
         htmlmin({
           removeComments: true,
           collapseWhitespace: true,
-        })
-      )
+        }),
+      ),
     )
     .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.stream());
@@ -99,10 +99,10 @@ export const pug = () =>
     .pipe(
       gulppug({
         pretty: true,
-      }).on("error", function (err) {
+      }).on('error', function (err) {
         console.log(err.toString());
-        this.emit("end");
-      })
+        this.emit('end');
+      }),
     )
     .pipe(gulpif(!dev, gulp.dest(path.dist.html)))
     .pipe(
@@ -112,8 +112,8 @@ export const pug = () =>
         htmlmin({
           removeComments: true,
           collapseWhitespace: true,
-        })
-      )
+        }),
+      ),
     )
     .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.stream());
@@ -124,15 +124,15 @@ export const scss = () =>
   gulp
     .src(path.src.scss)
     .pipe(gulpif(dev, sourcemaps.init()))
-    .pipe(compSass().on("error", compSass.logError))
+    .pipe(compSass().on('error', compSass.logError))
     .pipe(
       gulpif(
         !dev,
         autoprefixer({
           cascade: false,
           grid: false,
-        })
-      )
+        }),
+      ),
     )
     .pipe(gulpif(!dev, gcmq()))
     .pipe(gulpif(!dev, gulp.dest(path.dist.css)))
@@ -143,13 +143,13 @@ export const scss = () =>
           2: {
             specialComments: 0,
           },
-        })
-      )
+        }),
+      ),
     )
     .pipe(
       rename({
-        suffix: ".min",
-      })
+        suffix: '.min',
+      }),
     )
     .pipe(gulpif(dev, sourcemaps.write()))
     .pipe(gulp.dest(path.dist.css))
@@ -158,13 +158,13 @@ export const scss = () =>
 // js
 
 const webpackConf = {
-  mode: dev ? "development" : "production",
-  devtool: dev ? "eval-source-map" : false,
+  mode: dev ? 'development' : 'production',
+  devtool: dev ? 'eval-source-map' : false,
   optimization: {
     minimize: false,
   },
   output: {
-    filename: "index.js",
+    filename: 'index.js',
   },
   module: {
     rules: [],
@@ -175,7 +175,7 @@ if (!dev) {
   webpackConf.module.rules.push({
     test: /\.(js)$/,
     exclude: /(node_modules)/,
-    loader: "babel-loader",
+    loader: 'babel-loader',
   });
 }
 
@@ -188,8 +188,8 @@ export const js = () =>
     .pipe(gulpif(!dev, terser()))
     .pipe(
       rename({
-        suffix: ".min",
-      })
+        suffix: '.min',
+      }),
     )
     .pipe(gulp.dest(path.dist.js))
     .pipe(browserSync.stream());
@@ -206,29 +206,29 @@ export const img = () =>
       gulpif(
         !dev,
         gulpImg({
-          optipng: ["-i 1", "-strip all", "-fix", "-o7", "-force"],
-          pngquant: ["--speed=1", "--force", 256],
-          zopflipng: ["-y", "--lossy_8bit", "--lossy_transparent"],
+          optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
+          pngquant: ['--speed=1', '--force', 256],
+          zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
           jpegRecompress: [
-            "--strip",
-            "--quality",
-            "medium",
-            "--min",
+            '--strip',
+            '--quality',
+            'medium',
+            '--min',
             40,
-            "--max",
+            '--max',
             80,
           ],
-          mozjpeg: ["-optimize", "-progressive"],
-          gifsicle: ["--optimize"],
+          mozjpeg: ['-optimize', '-progressive'],
+          gifsicle: ['--optimize'],
           svgo: true,
-        })
-      )
+        }),
+      ),
     )
     .pipe(gulp.dest(path.dist.img))
     .pipe(
       browserSync.stream({
         once: true,
-      })
+      }),
     );
 
 export const svg = () =>
@@ -238,16 +238,16 @@ export const svg = () =>
       svgSprite({
         mode: {
           stack: {
-            sprite: "../sprite.svg",
+            sprite: '../sprite.svg',
           },
         },
-      })
+      }),
     )
     .pipe(gulp.dest(path.dist.img))
     .pipe(
       browserSync.stream({
         once: true,
-      })
+      }),
     );
 
 export const webp = () =>
@@ -256,13 +256,13 @@ export const webp = () =>
     .pipe(
       gulpWebp({
         quality: dev ? 100 : 60,
-      })
+      }),
     )
     .pipe(gulp.dest(path.dist.img))
     .pipe(
       browserSync.stream({
         once: true,
-      })
+      }),
     );
 
 export const avif = () =>
@@ -271,13 +271,13 @@ export const avif = () =>
     .pipe(
       gulpAvif({
         quality: dev ? 100 : 50,
-      })
+      }),
     )
     .pipe(gulp.dest(path.dist.img))
     .pipe(
       browserSync.stream({
         once: true,
-      })
+      }),
     );
 
 export const critCSS = () =>
@@ -288,9 +288,9 @@ export const critCSS = () =>
         base: path.dist.base,
         inline: true,
         css: [path.dist.cssIndex],
-      })
+      }),
     )
-    .on("error", (err) => {
+    .on('error', (err) => {
       console.error(err.message);
     })
     .pipe(gulp.dest(path.dist.base));
@@ -304,18 +304,18 @@ export const copy = () =>
     .pipe(
       browserSync.stream({
         once: true,
-      })
+      }),
     );
 
 export const server = () => {
   browserSync.init({
     ui: false,
     notify: false,
-    host: "localhost",
+    host: 'localhost',
     port: 3001,
-    // tunnel: true,
+    tunnel: true,
     server: {
-      baseDir: "dist",
+      baseDir: 'dist',
     },
   });
 

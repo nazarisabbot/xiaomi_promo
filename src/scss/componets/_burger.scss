@@ -1,0 +1,141 @@
+.burger {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  @media (max-width: 520px) {
+    display: block;
+  }
+
+  &__body {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  @media (max-width: 520px) {
+    width: 150%;
+    background: $white;
+    position: relative;
+    top: -255px;
+    padding: 50px 0 15px 0;
+    height: 250px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    }
+  }
+
+  &__body_active {
+    @media (max-width: 520px) {
+      top: 0;
+    }
+  }
+
+  &__item {
+    font-size: 1rem;
+    margin-right: 40px;
+  }
+
+  &__point {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+  }
+
+  &__switch {
+    width: 100px;
+    display: block;
+    padding: 7px 18px;
+    font-weight: 700;
+    text-align: center;
+    background-color: $orangeOne;
+    color: $white;
+    border-radius: 22px;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+  }
+
+  &__btn {
+    z-index: 2;
+    height: 20px;
+    width: 30px;
+    right: 20px;
+    position: absolute;
+    top: 15px;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    span {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      display: block;
+      width: 30px;
+      height: 2px;
+      background: $black;
+    }
+  }
+
+  &__btn::before, &__btn::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 2px;
+    background: $black;
+  }
+
+  &__btn::before {
+    top: 0px;
+  }
+
+  &__btn::after {
+    top: 20px;
+  }
+
+  &__btn_active {
+    z-index: 2;
+    height: 20px;
+    width: 30px;
+    right: 20px;
+    position: absolute;
+    top: 15px;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    span {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $black;
+    }
+  }
+
+  &__btn_active::before, &__btn_active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 2px;
+    background: $black;
+  }
+
+  &__btn_active::before {
+    top: 7px;
+    transform: rotate(45deg);
+  }
+
+  &__btn_active::after {
+    top: 7px;
+    transform: rotate(-45deg);
+  }
+}

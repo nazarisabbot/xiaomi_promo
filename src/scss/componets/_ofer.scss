@@ -1,0 +1,56 @@
+.ofer {
+
+  &__body {
+    padding: 50px 0 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      :not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__item {
+    width: 336px;
+    display: flex;
+    align-items: center;
+    padding: 0 17px;
+    justify-content: center;
+    color: $white;
+    border-radius: 37px;
+    @media (max-width: 1440px) {
+      width: calc(250px + (336 - 250) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
+
+  &__item_orang {
+    background: linear-gradient(90deg, $orangeOne, $orangeTwo 100%);
+    box-shadow: 3px 25px 40px -23px $orangeOne;
+  }
+
+  &__item_violet {
+    background: linear-gradient(90deg, $firstPartg, $secondPartg 100%);
+    box-shadow: 3px 25px 40px -23px $firstPartg;
+  }
+
+  &__step {
+    font-size: 3.1rem;
+    font-weight: 700;
+  }
+
+  &__description {
+    font-size: 0.6rem;
+    
+  }
+
+}
+
+.title {
+  padding-top: 50px;
+  font-size: 1rem;
+  text-align: center;
+}

@@ -1,31 +1,41 @@
-$primary: #F87C09;
-$primaryLight: #FF922E;
-$primaryDark: #AEAAAA;
+/* Main Screen colors */
+$firstPartg: #99B9FF;
+$secondPartg: #D2E1FF;
+$orangeOne: #FF6B04;
+$orangeTwo: #FFA26A;
 
-$secondary: #EAEAEA;
-$secondaryDark: #6B6B6B;
+/* Form colors */
+$bgForm: #F4F4F4;
+$input: #D9D9D9;
 
-$black: #000;
+/* Footer colors */
+$footerbgcolor: #202929;
+$logoFooterColor: #2A3333;
+
+/* Base colors */
+$black: #222222;
 $white: #FFF;
 
+/* Screen dimensions */
+$mobile: 320px;
 $tablet: 768px;
 $laptop: 1024px;
-$desktop: 1280px;
+$desktop: 1440px;
 
 @mixin tablet {
-  @media (min-width: #{$tablet}) {
+  @media (max-width: #{$tablet}) {
     @content;
   }
 }
 
 @mixin laptop {
-  @media (min-width: #{$laptop}) {
+  @media (max-width: #{$laptop}) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop}) {
+  @media (max-width: #{$desktop}) {
     @content;
   }
 }

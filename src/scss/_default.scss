@@ -1,6 +1,11 @@
 html {
+  font-size: 40px;
   position: relative;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  @media (max-width: 1440px) {
+    font-size: calc(25px + (40 - 25) * ((100vw - 320px) / (1440 - 320)));
+  }
 }
 
 *,
@@ -8,22 +13,6 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
-body {
-  min-width: 320px;
-  min-height: 100vh;
-  font-family: Montserrat, Arial, sans-serif;
-  line-height: 1.3;
-  font-size: 12px;
-  font-weight: 400;
-  color: $white; /*цвет под ваш проект*/
-  background-color: $black; /*цвет под ваш проект*/
-  background-image: url(../img/sprite.svg#fire);
-  background-position: center top 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 
 img {
   max-width: 100%;
@@ -72,27 +61,44 @@ iframe {
   overflow: hidden;
 }
 
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Roboto, Arial, sans-serif;
+  line-height: 1.3;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $black; 
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 
 .container {
-  max-width: 1184px;
-  padding: 0 12px;
+  max-width: $desktop;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
 @include tablet {
-  body {
-    background-color: red;
+  .container {
+    max-width: $tablet;
   }
 }
 
 @include laptop {
-  body {
-    background-color: green;
+  .container {
+    max-width: $laptop;
   }
 }
 
 @include desktop {
-  body {
-    background-color: blue;
+  .container {
+    max-width: $desktop;
   }
 }

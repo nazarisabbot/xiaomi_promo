@@ -1,0 +1,16 @@
+.partners {
+  &__list {
+    padding: 50px 0 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 15px;
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+  }
+}
+
