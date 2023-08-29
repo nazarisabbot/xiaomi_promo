@@ -16,7 +16,7 @@
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
   @media (max-width: 520px) {
-    width: 150%;
+    width: 120%;
     background: $white;
     position: relative;
     top: -255px;
@@ -36,7 +36,6 @@
 
   &__item {
     font-size: 1rem;
-    margin-right: 40px;
   }
 
   &__point {
