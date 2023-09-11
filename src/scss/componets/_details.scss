@@ -1,0 +1,55 @@
+.details {
+  width: 100%;
+
+  &__body {
+    padding: 50px 0;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 1440px) {
+      padding-top: calc(25px + (50 - 25) * ((100vw - 320px) / (1440 - 320)));
+      padding-bottom: calc(25px + (50 - 25) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 26px 52px;
+    border-radius: 32px;
+    background: linear-gradient(90deg, $firstPartg, $thirdPartg 100%);
+    box-shadow: 3px 25px 40px -23px $firstPartg;
+    color: white;
+    @media (max-width: 1440px) {
+      gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1440 - 320)));
+      border-radius: calc(20px + (32 - 20) * ((100vw - 320px) / (1440 - 320)));
+      padding-top: calc(10px + (26 - 10) * ((100vw - 320px) / (1440 - 320)));
+      padding-bottom: calc(10px + (26 - 10) * ((100vw - 320px) / (1440 - 320)));
+      padding-right: calc(20px + (52 - 20) * ((100vw - 320px) / (1440 - 320)));
+      padding-left: calc(20px + (52 - 20) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
+
+  &__item {
+    color: $white;
+  }
+
+  &__item_title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  &__item_paragraph {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+

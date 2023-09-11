@@ -1,7 +1,7 @@
-const burger = (btn, bodyBurger) => {
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('burger__btn_active');
-    bodyBurger.classList.toggle('burger__body_active');
+const burger = (btn, menu) => {
+  btn.addEventListener('click', (e) => {
+    btn.classList.toggle('active');
+    menu.classList.toggle('active');
   });
 };
 

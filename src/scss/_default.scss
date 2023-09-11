@@ -1,4 +1,7 @@
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   font-size: 40px;
   position: relative;
   box-sizing: border-box;
@@ -62,7 +65,9 @@ iframe {
 }
 
 body {
-  min-width: 320px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   min-height: 100vh;
   overflow-x: hidden;
   font-family: Roboto, Arial, sans-serif;

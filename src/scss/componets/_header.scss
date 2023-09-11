@@ -14,13 +14,33 @@
     align-items: center;
     height: 140px;
     @media (max-width: 520px) {
-      display: none;
+      position: absolute;
+      top: -220%;
+      left: 0;
+      width: 100%;
+      height: 300px;
+      padding: 70px 0 40px 40px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: $white;
+      transition-property: top;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-out;
     }
+  }
+
+  &__list.active {
+    top: 0;
   }
 
   &__item {
     font-size: 0.65rem;
     margin-right: 40px;
+    @media (max-width: 520px) {
+      margin-right: 0;
+      font-size: 1rem;     
+    }
   }
 
   &__point {
@@ -67,12 +87,89 @@
     align-items: center;
     justify-content: flex-end;
     margin-right: 15px;
+    @media (max-width: 520px) {
+      margin-left: 15px;
+      margin-right: 0;
+    }
   }
 	
   &__link {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+  }
+
+	&__burger {
+    display: none;
+    position: relative;
+    top: 50px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    @media (max-width: 520px) {
+      display: block;
+    }
+    
+    span {
+      content: "";
+      position: absolute;
+      top: 13px;
+      display: block;
+      background: $orangeOne;
+      width: 100%;
+      height: 3px;
+      transition-property: transform;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-out;
+    }
+  }
+
+  &__burger::after,
+  &__burger::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: $orangeOne;
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+  }
+
+  &__burger::after {
+    bottom: 0;
+  }
+
+  &__burger::before {
+    top: 0;
+  }
+
+  &__burger.active {
+    span {
+      transition-property: transform;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-out;
+      transform: scaleX(0);
+    }
+  }
+
+  &__burger.active::after {
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    transform: rotate(45deg);
+    bottom: 13px
+    
+  }
+
+  &__burger.active::before {
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    transform: rotate(-45deg);
+    top: 13px
   }
 }
 

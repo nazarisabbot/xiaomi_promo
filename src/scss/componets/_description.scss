@@ -1,0 +1,57 @@
+.description {
+  width: 100%;
+
+  &__body {
+    padding: 50px 0 50px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 1440px) {
+      padding-top: calc(25px + (50 - 25) * ((100vw - 320px) / (1440 - 320)));
+      padding-bottom: calc(25px + (50 - 25) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
+
+  &__list {
+    width: 90%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 82px;
+    padding: 62px 77px;
+    background: linear-gradient(90deg, $orangeOne, $orangeTwo 100%);
+    box-shadow: 3px 25px 40px -23px $orangeOne;
+    border-radius: 65px;
+    color: $white;
+    font-size: 0.8rem;
+    font-weight: 300;
+    @media (max-width: 1440px) {
+      gap: calc(32px + (82 - 32) * ((100vw - 320px) / (1440 - 320)));
+      border-radius: calc(32px + (65 - 32) * ((100vw - 320px) / (1440 - 320)));
+      padding-top: calc(32px + (62 - 32) * ((100vw - 320px) / (1440 - 320)));
+      padding-bottom: calc(32px + (62 - 32) * ((100vw - 320px) / (1440 - 320)));
+      padding-right: calc(27px + (77 - 27) * ((100vw - 320px) / (1440 - 320)));
+      padding-left: calc(27px + (77 - 27) * ((100vw - 320px) / (1440 - 320)));
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item_img {
+    flex: 1 0 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+  &__paragraph {
+    flex: 0 1 70%;
+  }
+}
+
