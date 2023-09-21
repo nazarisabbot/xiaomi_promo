@@ -5,9 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xiaomi</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+  <link rel="mask-icon" href="./img/icons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="./css/index.min.css">
   <script src="./js/index.min.js" type="module"></script>
+  <title>Xiaomi</title>
 </head>
 
 <body style='overflow-x:hidden;'>
@@ -16,8 +22,8 @@
     <div class="container">
       <nav class="header__body">
         <ul class="header__list">
-          <li class="header__item"><a class="header__point" href="#request">Забрат промо</a></li>
-          <li class="header__item"><a class="header__point" href="#footer">Условия</a></li>
+          <li class="header__item"><a class="header__point" href="#footer">Правила</a></li>
+          <li class="header__item"><a class="header__point" href="#question">Написать нам</a></li>
           <li class="header__item"><a class="header__switch" href="kz_index.html">KZ</a></li>
         </ul>
         <div class="header__logo">
@@ -38,7 +44,11 @@
         <div class="screen__body">
           <ul class="screen__list">
             <li class="screen__item screen__item_wide">
-              <img class="screen__img" src="./img/photo_main.png" alt="Фото телефонов Xiaomi 12 серии">
+              <picture>
+                <source srcset="./img/photo_main.avif">
+                <source srcset="./img/photo_main.webp">
+                <img class="screen__img" src="./img/photo_main.png" alt="Фото телефонов Xiaomi 12 серии">
+              </picture>
             </li>
             <li class="screen__item">
               <h1 class="screen__title">Смартфоны с готовым контентом!</h1>

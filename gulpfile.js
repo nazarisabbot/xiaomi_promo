@@ -36,7 +36,7 @@ import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
 import svgSprite from 'gulp-svg-sprite';
 
-let dev = true;
+let dev = false;
 
 const path = {
   dist: {
