@@ -1,11 +1,11 @@
 @font-face {
-  @include font(Roboto, 300)
+  @include font("Roboto-300", 300)
 }
 
 @font-face {
-  @include font(Roboto, 400)
+  @include font("Roboto-400", 400)
 }
 
 @font-face {
-  @include font(Roboto, 700)
+  @include font("Roboto-700", 700)
 }

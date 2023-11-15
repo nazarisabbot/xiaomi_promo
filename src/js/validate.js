@@ -21,6 +21,11 @@ const validate = (form, question) => {
 
   validateForm.addField(imei, [
     {
+      rule: 'customRegexp',
+      value: /^\d+$/,
+      errorMessage: 'Emei должен состоять только из цифр',
+    },
+    {
       rule: 'required',
       errorMessage: 'Заполните пожалуйста данное поле',
     },
