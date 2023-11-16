@@ -1,6 +1,6 @@
 import JustValidate from 'just-validate';
 
-const validate = (form, question) => {
+const validate = (form, question, lang) => {
   /* Form validate */
   const validateForm = new JustValidate(form);
 
@@ -11,11 +11,17 @@ const validate = (form, question) => {
   validateForm.addField(email, [
     {
       rule: 'required',
-      errorMessage: 'Заполните пожалуйста данное поле',
+      errorMessage:
+        lang === 'ru'
+          ? 'Заполните, пожалуйста, данное поле'
+          : 'Осы бапты толтырыңыз',
     },
     {
       rule: 'email',
-      errorMessage: 'Введите корректный адрес электронной почты',
+      errorMessage:
+        lang === 'ru'
+          ? 'Введите корректный адрес электронной почты'
+          : 'Өтінеміз қолданыстағы электронды пошта адресін енгізіңіз',
     },
   ]);
 
@@ -23,28 +29,43 @@ const validate = (form, question) => {
     {
       rule: 'customRegexp',
       value: /^\d+$/,
-      errorMessage: 'Emei должен состоять только из цифр',
+      errorMessage:
+        lang === 'ru'
+          ? 'IMEI должен состоять только из цифр'
+          : 'IMEI тек сандардан тұруы керек',
     },
     {
       rule: 'required',
-      errorMessage: 'Заполните пожалуйста данное поле',
+      errorMessage:
+        lang === 'ru'
+          ? 'Заполните, пожалуйста, данное поле'
+          : 'Осы бапты толтырыңыз',
     },
     {
       rule: 'minLength',
-      value: 11,
-      errorMessage: 'Emei должен состоять как минимум из 11 цифр',
+      value: 15,
+      errorMessage:
+        lang === 'ru'
+          ? 'IMEI должен состоять минимум из 15 цифр'
+          : 'IMEI нөмірі 15 саннан тұруы керек',
     },
     {
       rule: 'maxLength',
-      value: 11,
-      errorMessage: 'Emei должен состоять максимум из 11 цифр',
+      value: 15,
+      errorMessage:
+        lang === 'ru'
+          ? 'IMEI должен состоять максимум из 15 цифр'
+          : 'IMEI ең көбі 15 саннан тұруы керек',
     },
   ]);
 
   validateForm.addField(checkold, [
     {
       rule: 'required',
-      errorMessage: 'Вы должны подтвердить согласие с правилами акции',
+      errorMessage:
+        lang === 'ru'
+          ? 'Вы должны подтвердить согласие с правилами акции'
+          : 'Науқан ережелерімен келісуіңіз керек',
     },
   ]);
   /* end */
@@ -60,37 +81,55 @@ const validate = (form, question) => {
   validateQuestion.addField(name, [
     {
       rule: 'required',
-      errorMessage: 'Заполните пожалуйста данное поле',
+      errorMessage:
+        lang === 'ru'
+          ? 'Заполните, пожалуйста, данное поле'
+          : 'Осы бапты толтырыңыз',
     },
   ]);
 
   validateQuestion.addField(questionEmail, [
     {
       rule: 'required',
-      errorMessage: 'Заполните пожалуйста данное поле',
+      errorMessage:
+        lang === 'ru'
+          ? 'Заполните, пожалуйста, данное поле'
+          : 'Осы бапты толтырыңыз',
     },
     {
       rule: 'email',
-      errorMessage: 'Введите корректный адрес электронной почты',
+      errorMessage:
+        lang === 'ru'
+          ? 'Введите корректный адрес электронной почты'
+          : 'Өтінеміз қолданыстағы электронды пошта адресін енгізіңіз',
     },
   ]);
 
   validateQuestion.addField(message, [
     {
       rule: 'required',
-      errorMessage: 'Заполните пожалуйста данное поле',
+      errorMessage:
+        lang === 'ru'
+          ? 'Заполните, пожалуйста, данное поле'
+          : 'Осы бапты толтырыңыз',
     },
     {
       rule: 'maxLength',
       value: 100,
-      errorMessage: 'Сообщение не больше 100 символов',
+      errorMessage:
+        lang === 'ru'
+          ? 'Сообщение не должно содержать больше 100 символов'
+          : 'Хабарлама 100 таңбадан аспауы керек',
     },
   ]);
 
   validateQuestion.addField(checkoldQuestion, [
     {
       rule: 'required',
-      errorMessage: 'Вы должны подтвердить согласие с правилами акции',
+      errorMessage:
+        lang === 'ru'
+          ? 'Вы должны подтвердить согласие с правилами акции'
+          : 'Науқан ережелерімен келісуіңіз керек',
     },
   ]);
   /* end */
