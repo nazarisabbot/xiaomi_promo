@@ -132,6 +132,8 @@ const validate = (form, question, lang) => {
           : 'Науқан ережелерімен келісуіңіз керек',
     },
   ]);
+
+  return {validateForm, validateQuestion};
   /* end */
 };
 
