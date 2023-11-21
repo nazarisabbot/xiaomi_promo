@@ -88,6 +88,9 @@
     font-size: 0.6rem;
     text-transform: uppercase;
     padding: 0 0 0 15px;
+    @media (max-width: 1440px) {
+      padding-left: calc(3px + (15 - 3) * ((100vw - 320px) / (1440 - 320)));
+    }
   }
 
   input[type="file"] {

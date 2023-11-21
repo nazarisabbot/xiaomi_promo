@@ -1,6 +1,8 @@
 import softScroll from './softScroll.js';
 import burger from './burger.js';
 import validate from './validate.js';
+import request from './request.js';
+import callModalWindow from './callModalWindow.js';
 
 const lang = document.querySelector('html').getAttribute('lang');
 const form = document.querySelector('#form');
@@ -27,28 +29,9 @@ form.addEventListener('submit', async (e) => {
   const isFormValid = validateForm;
 
   if (isFormValid.isValid) {
-    try {
-      const response = await fetch(
-        'http://xiaomipromo.kz:81/api/v1/code/receive',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(toSentDataObjForPromo),
-        },
-      );
-
-      if (response.ok) {
-        console.log('Данные успешно отправлены');
-        /* Здесь вызов модального окна */
-        form.reset();
-      } else {
-        console.error('Ошибка при отправке данных:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Произошла ошибка:', error);
-    }
+    request('v1/code/receive', toSentDataObjForPromo, form).then((res) => {
+      callModalWindow(lang, res, 'form');
+    });
   }
 });
 
@@ -65,24 +48,8 @@ question.addEventListener('submit', async (e) => {
   const isFormValidQuestion = validateQuestion;
 
   if (isFormValidQuestion.isValid) {
-    try {
-      const response = await fetch('http://xiaomipromo.kz:81/api/v1/feedback', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(toSentDataObj),
-      });
-
-      if (response.ok) {
-        console.log('Данные успешно отправлены');
-        /* Здесь вызов модального окна */
-        question.reset();
-      } else {
-        console.error('Ошибка при отправке данных:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Произошла ошибка:', error);
-    }
+    request('v1/feedback', toSentDataObj, question).then((res) => {
+      callModalWindow(lang, res, 'question');
+    });
   }
 });
