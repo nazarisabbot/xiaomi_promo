@@ -30,6 +30,7 @@ form.addEventListener('submit', async (e) => {
 
   if (isFormValid.isValid) {
     request('v1/code/receive', toSentDataObjForPromo, form).then((res) => {
+      console.log(res);
       callModalWindow(lang, res, 'form');
     });
   }

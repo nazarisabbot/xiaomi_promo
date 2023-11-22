@@ -19,7 +19,7 @@
     position: absolute;
     bottom: -2px;
     left: 0;
-    right: 100%;
+    right: 0;
     height: 2px;
     background-color: $white;
     transition: right 0.3s ease-out;
@@ -29,7 +29,7 @@
     padding-bottom: 15px;
   }
   
-  &__link:hover::before {
-    right: 0;
-  } 
+  // &__link:hover::before {
+  //   right: 0;
+  // } 
 }

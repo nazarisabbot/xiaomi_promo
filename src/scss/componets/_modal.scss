@@ -1,12 +1,16 @@
 .modal {
   position: fixed;
-  top: 50%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   background-color: $white;
   box-shadow: 3px 25px 40px -23px $thirdPartg;
   border-radius: 25px;
   z-index: 15;
+  
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
 
   &__body {
     display: flex;
