@@ -28,6 +28,12 @@
   &__item:first-child {
     padding-bottom: 15px;
   }
+
+  &__paragraph {
+    span {
+      word-break: break-all;
+    }
+  }
   
   // &__link:hover::before {
   //   right: 0;
